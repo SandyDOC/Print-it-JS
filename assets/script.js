@@ -18,8 +18,23 @@ const slides = [
     }
 ]
 
+//Add Event Listeners on arrows
+//Left Arrow 
+const arrowLeft = document.querySelector(".arrow_left");
 
+function displayDirectionLeft() {
+    console.log("Flèche gauche cliquée")
+}
 
+arrowLeft.addEventListener("click", displayDirectionLeft)
 
+//Right Arrow
+const arrowRight = document.querySelector(".arrow_right");
+
+function displayDirectionRight() {
+    console.log("Flèche droite cliquée")
+}
+
+arrowRight.addEventListener("click", displayDirectionRight)
 
 
