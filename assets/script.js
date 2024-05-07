@@ -22,19 +22,13 @@ const slides = [
 //Left Arrow 
 const arrowLeft = document.querySelector(".arrow_left");
 
-function displayDirectionLeft() {
-    console.log("Flèche gauche cliquée")
-}
-
-arrowLeft.addEventListener("click", displayDirectionLeft)
+arrowLeft.addEventListener("click", function(){
+    console.log("Flèche gauche cliquée");
+});
 
 //Right Arrow
 const arrowRight = document.querySelector(".arrow_right");
 
-function displayDirectionRight() {
-    console.log("Flèche droite cliquée")
-}
-
-arrowRight.addEventListener("click", displayDirectionRight)
-
-
+arrowRight.addEventListener("click", function(){
+    console.log("Flèche droite cliquée");
+});
