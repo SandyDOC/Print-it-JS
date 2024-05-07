@@ -18,18 +18,59 @@ const slides = [
     }
 ]
 
-//Add Event Listeners on arrows
-//Left Arrow 
-const arrowLeft = document.querySelector(".arrow_left");
+// Index de la diapositive actuelle
+let currentSlideIndex = 0;
 
-arrowLeft.addEventListener("click", () => {
+// Sélectionnez la flèche gauche
+const arrowLeft = document.querySelector('.arrow_left');
+
+arrowLeft.addEventListener('click', () => {// Ajoutez un écouteur d'événements pour le clic sur la flèche gauche
     console.log("Flèche gauche cliquée");
+    currentSlideIndex--;// Décrémentez l'index de la diapositive actuelle
+
+    if (currentSlideIndex < 0) {// Vérifiez si l'index est inférieur à 0
+        currentSlideIndex = slides.length - 1;// Si c'est le cas, revenez à la dernière diapositive
+    }
+    updateSlide(currentSlideIndex);// Mettez à jour la diapositive avec le nouvel index
 });
 
-//Right Arrow
-const arrowRight = document.querySelector(".arrow_right");
+// Sélectionnez la flèche droite
+const arrowRight = document.querySelector('.arrow_right');
 
-arrowRight.addEventListener("click", () => {
+arrowRight.addEventListener('click', () => {// Ajoutez un écouteur d'événements pour le clic sur la flèche droite
     console.log("Flèche droite cliquée");
+    currentSlideIndex++;// Incrémentez l'index de la diapositive actuelle
+
+    if (currentSlideIndex === slides.length) {// Vérifiez si l'index dépasse la dernière diapositive
+        currentSlideIndex = 0;// Si c'est le cas, revenez à la première diapositive
+    }
+
+    updateSlide(currentSlideIndex);// Mettez à jour la diapositive avec le nouvel index
 });
 
+// Fonction pour mettre à jour la diapositive
+function updateSlide(index) {
+    // Mettez à jour l'image
+    const bannerImage = document.querySelector(".banner-img");
+    bannerImage.src = './assets/images/slideshow/' + slides[index].image;
+
+    // Mettez à jour le texte
+    const bannerText = document.querySelector("#banner p");
+    bannerText.innerHTML = slides[index].tagLine;
+
+    // Mettez à jour les bullet points
+    const dots = document.querySelectorAll('.dot');
+    for (let i = 0; i < dots.length; i++) {
+        const dot = dots[i];
+
+        if (i === index) {// Ajoutez la classe dot_selected au point correspondant à l'index
+            dot.classList.add('dot_selected');
+        } else {// Supprimez la classe dot_selected de tous les points
+            dot.classList.remove('dot_selected');
+        }
+    }
+    currentSlideIndex = index;// Mettez à jour l'index de la diapositive actuelle
+}
+
+// // Index de la diapositive actuelle
+// let currentSlideIndex = 0;
