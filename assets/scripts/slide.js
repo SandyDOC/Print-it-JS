@@ -1,8 +1,8 @@
 // Fonction pour mettre à jour les points indicateurs
 function updateDots(index) {
     // dots.forEach((dot, i) => {
-        for (let i = 0; i < dots.length; i++) {
-            const dot = dots[i];
+    for (let i = 0; i < dots.length; i++) {
+        const dot = dots[i];
         if (i === index) {
             dot.classList.add('dot_selected'); // Ajoutez la classe pour le point actuel
         } else {
@@ -14,9 +14,10 @@ function updateDots(index) {
 // updateSlide();
 
 // Fonction pour mettre à jour les images et le texte
-function updateSlide(index=0) {
-  bannerImage.src = './assets/images/slideshow/' + slides[index].image;
-  bannerText.innerHTML = slides[index].tagLine;
+function updateSlide(index = 0) {
+    // bannerImage.setAttribute('src', './assets/images/slideshow/' + slides[index].image);
+    bannerImage.src = './assets/images/slideshow/' + slides[index].image;
+    bannerText.innerHTML = slides[index].tagLine;
 }
 
 
