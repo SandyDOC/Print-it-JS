@@ -16,12 +16,17 @@ const slides = [
         "image": "slide4.png",
         "tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
     }
+    // {
+    //     "image": "slide3.jpg",
+    //     "tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
+    // }
+
 ]
 
 //Récupération des éléments utilisés pour le carrousel de la page web
 const arrowLeft = document.querySelector('.arrow_left');
 const arrowRight = document.querySelector('.arrow_right');
-const dots = document.querySelectorAll('.dot');
+const dotsContainer = document.querySelector('.dots');
 const bannerImage = document.querySelector(".banner-img");
 const bannerText = document.querySelector("#banner p");
 
